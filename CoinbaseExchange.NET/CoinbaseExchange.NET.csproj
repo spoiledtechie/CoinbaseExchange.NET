@@ -67,6 +67,10 @@
     <Compile Include="Endpoints\OrderBook\GetProductOrderBookResponse.cs" />
     <Compile Include="Endpoints\OrderBook\RealtimeMessage.cs" />
     <Compile Include="Endpoints\OrderBook\RealtimeOrderBookClient.cs" />
+    <Compile Include="Endpoints\PaymentMethods\GetPaymentMethodsRequest.cs" />
+    <Compile Include="Endpoints\PaymentMethods\GetPaymentMethodsResponse.cs" />
+    <Compile Include="Endpoints\PaymentMethods\PaymentMethods.cs" />
+    <Compile Include="Endpoints\PaymentMethods\PaymentMethodsClient.cs" />
     <Compile Include="Endpoints\Products\GetProductsRequest.cs" />
     <Compile Include="Endpoints\Products\GetProductsResponse.cs" />
     <Compile Include="Endpoints\Products\Products.cs" />
