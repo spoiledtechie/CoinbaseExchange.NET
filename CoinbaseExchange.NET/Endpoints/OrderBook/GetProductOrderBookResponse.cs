@@ -14,7 +14,7 @@ namespace CoinbaseExchange.NET.Endpoints.OrderBook
         public IReadOnlyList<BidAskOrder> Sells { get; private set; }
         public IReadOnlyList<BidAskOrder> Buys { get; private set; }
 
-        public GetProductOrderBookResponse(ExchangeResponse response) : base (response)
+        public GetProductOrderBookResponse(HttpExchangeResponse response) : base (response)
         {
             var json = response.ContentBody;
             var jObject = JObject.Parse(json);

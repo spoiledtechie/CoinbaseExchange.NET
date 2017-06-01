@@ -12,7 +12,7 @@ namespace CoinbaseExchange.NET.Endpoints.PaymentMethods
     {
         public IEnumerable<PaymentMethods> PaymentMethods { get; private set; }
 
-        public GetPaymentMethodsResponse(ExchangeResponse response) : base(response)
+        public GetPaymentMethodsResponse(HttpExchangeResponse response) : base(response)
         {
             var json = response.ContentBody;
             var jArray = JArray.Parse(json);

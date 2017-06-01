@@ -12,7 +12,7 @@ namespace CoinbaseExchange.NET.Endpoints.Account
     {
         public IEnumerable<AccountHold> AccountHolds { get; private set; }
 
-        public GetAccountHoldsResponse(ExchangeResponse response) : base(response)
+        public GetAccountHoldsResponse(HttpExchangeResponse response) : base(response)
         {
             var json = response.ContentBody;
             var jArray = JArray.Parse(json);

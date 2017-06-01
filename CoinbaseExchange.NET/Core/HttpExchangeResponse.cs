@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace CoinbaseExchange.NET.Core
 {
-    public class ExchangeResponse
+    public class HttpExchangeResponse
     {
         public IEnumerable<KeyValuePair<string, IEnumerable<string>>> Headers { get; private set; }
         public string ContentBody { get; private set; }
         public HttpStatusCode StatusCode { get; private set; }
         public bool IsSuccessStatusCode { get; private set; }
 
-        public ExchangeResponse(
+        public HttpExchangeResponse(
             HttpStatusCode statusCode, 
             bool isSuccess, 
             IEnumerable<KeyValuePair<string, IEnumerable<string>>> headers,

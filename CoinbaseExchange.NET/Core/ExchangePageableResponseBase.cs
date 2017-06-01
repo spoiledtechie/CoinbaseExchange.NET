@@ -12,7 +12,7 @@ namespace CoinbaseExchange.NET.Core
         public string BeforePaginationToken { get; set; }
         public string AfterPaginationToken { get; set; }
 
-        protected ExchangePageableResponseBase(ExchangeResponse response)
+        protected ExchangePageableResponseBase(HttpExchangeResponse response)
         {
             var beforeHeader = response.Headers.LastOrDefault(x => x.Key != null && x.Key.ToUpper() == "CB-BEFORE");
             var afterHeader = response.Headers.LastOrDefault(x => x.Key != null && x.Key.ToUpper() == "CB-AFTER");

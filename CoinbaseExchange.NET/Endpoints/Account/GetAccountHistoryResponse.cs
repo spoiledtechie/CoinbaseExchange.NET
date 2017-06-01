@@ -13,7 +13,7 @@ namespace CoinbaseExchange.NET.Endpoints.Account
     {
         public IEnumerable<AccountHistory> AccountHistoryRecords { get; private set; }
 
-        public GetAccountHistoryResponse(ExchangeResponse response)
+        public GetAccountHistoryResponse(HttpExchangeResponse response)
             : base(response)
         {
             var json = response.ContentBody;

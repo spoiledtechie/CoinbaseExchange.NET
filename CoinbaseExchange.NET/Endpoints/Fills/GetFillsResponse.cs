@@ -12,7 +12,7 @@ namespace CoinbaseExchange.NET.Endpoints.Fills
     {
         public IEnumerable<Fill> Fills { get; private set; }
 
-        public GetFillsResponse(ExchangeResponse response) : base(response)
+        public GetFillsResponse(HttpExchangeResponse response) : base(response)
         {
             var json = response.ContentBody;
             var jArray = JArray.Parse(json);

@@ -12,7 +12,7 @@ namespace CoinbaseExchange.NET.Endpoints.Products
 	{
 		public IEnumerable<Products> Products { get; private set; }
 
-		public GetProductsResponse(ExchangeResponse response) : base(response)
+		public GetProductsResponse(HttpExchangeResponse response) : base(response)
         {
 			var json = response.ContentBody;
 			var jArray = JArray.Parse(json);

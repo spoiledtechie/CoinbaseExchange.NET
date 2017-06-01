@@ -26,7 +26,7 @@ namespace CoinbaseExchange.NET.Core
             _authContainer = authContainer;
         }
 
-        protected async Task<ExchangeResponse> GetResponse(ExchangeRequestBase request)
+        protected async Task<HttpExchangeResponse> GetResponse(ExchangeRequestBase request)
         {
             var relativeUrl = request.RequestUrl;
             var absoluteUri = new Uri(IsSandbox ? API_SANDBOX_ENDPOINT_URL : API_ENDPOINT_URL, relativeUrl);
@@ -73,7 +73,7 @@ namespace CoinbaseExchange.NET.Core
                 var statusCode = response.StatusCode;
                 var isSuccess = response.IsSuccessStatusCode;
 
-                var genericExchangeResponse = new ExchangeResponse(statusCode, isSuccess, headers, contentBody);
+                var genericExchangeResponse = new HttpExchangeResponse(statusCode, isSuccess, headers, contentBody);
                 return genericExchangeResponse;
             }
         }
