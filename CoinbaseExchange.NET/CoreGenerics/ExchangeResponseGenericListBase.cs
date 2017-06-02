@@ -7,7 +7,7 @@ using CoinbaseExchange.NET.Utilities;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace CoinbaseExchange.NET.Core
+namespace CoinbaseExchange.NET.CoreGenerics
 {
     public class ExchangeResponseGenericListBase<T> : ExchangeResponseGenericBase
     {

@@ -1,4 +1,5 @@
 ﻿using CoinbaseExchange.NET.Core;
+using CoinbaseExchange.NET.CoreGenerics;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;

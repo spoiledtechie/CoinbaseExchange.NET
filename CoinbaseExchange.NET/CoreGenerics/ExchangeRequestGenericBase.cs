@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using CoinbaseExchange.NET.Utilities;
 using Newtonsoft.Json;
+using CoinbaseExchange.NET.Core;
 
-namespace CoinbaseExchange.NET.Core
+namespace CoinbaseExchange.NET.CoreGenerics
 {
     public class ExchangeRequestGenericBase : ExchangeRequestBase
     {
