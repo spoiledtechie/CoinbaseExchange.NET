@@ -10,11 +10,13 @@ namespace CoinbaseExchange.NET.Core
 {
     public class ExchangeRequestGenericBase : ExchangeRequestBase
     {
-        public ExchangeRequestGenericBase(string method, string url, object requestBody)
+        public ExchangeRequestGenericBase(string method, string url, object requestBody = null)
             : base(method)
         {
             RequestUrl = url;
-            RequestBody = JsonConvert.SerializeObject(requestBody);
+
+            if (requestBody != null)
+                RequestBody = JsonConvert.SerializeObject(requestBody);
         }
     }
 }

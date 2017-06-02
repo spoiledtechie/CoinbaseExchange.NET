@@ -9,14 +9,14 @@ using Newtonsoft.Json.Linq;
 
 namespace CoinbaseExchange.NET.Core
 {
-    public class ExchangeResponseGenericBase
+    public class ExchangeResponseGenericListBase<T> : ExchangeResponseGenericBase
     {
-        public HttpExchangeResponse HttpResponse { get; set; }
+        public List<T> Items { get; set; }
 
-        internal virtual void ProcessJson()
+        internal override void ProcessJson()
         {
             if (HttpResponse.IsSuccessStatusCode)
-                JsonConvert.PopulateObject(HttpResponse.ContentBody, this);
+                Items = JsonConvert.DeserializeObject<List<T>>(HttpResponse.ContentBody);
         }
     }
 }

@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Core\CBAuthenticationContainer.cs" />
     <Compile Include="Core\ExchangePageableResponseBase.cs" />
+    <Compile Include="Core\ExchangeResponseGenericListBase.cs" />
     <Compile Include="Core\ExchangeResponseGenericBase.cs" />
     <Compile Include="Core\ExchangeRequestGenericBase.cs" />
     <Compile Include="Endpoints\Account\AccountClient.cs" />
@@ -72,9 +73,7 @@
     <Compile Include="Endpoints\OrderBook\GetProductOrderBookResponse.cs" />
     <Compile Include="Endpoints\OrderBook\RealtimeMessage.cs" />
     <Compile Include="Endpoints\OrderBook\RealtimeOrderBookClient.cs" />
-    <Compile Include="Endpoints\PaymentMethods\GetPaymentMethodsRequest.cs" />
     <Compile Include="Endpoints\PaymentMethods\GetPaymentMethodsResponse.cs" />
-    <Compile Include="Endpoints\PaymentMethods\PaymentMethods.cs" />
     <Compile Include="Endpoints\PaymentMethods\PaymentMethodsClient.cs" />
     <Compile Include="Endpoints\Products\GetProductsRequest.cs" />
     <Compile Include="Endpoints\Products\GetProductsResponse.cs" />

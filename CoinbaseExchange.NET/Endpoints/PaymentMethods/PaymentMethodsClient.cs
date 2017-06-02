@@ -17,10 +17,21 @@ namespace CoinbaseExchange.NET.Endpoints.PaymentMethods
 
         public async Task<GetPaymentMethodsResponse> GetPaymentMethodsAsync()
         {
-            var request = new GetPaymentMethodsRequest();
+            var req = new ExchangeRequestGenericBase("GET", "/payment-methods");
+
+            return await process<GetPaymentMethodsResponse>(req);
+        }
+
+        private async Task<T> process<T>(ExchangeRequestGenericBase request)
+            where T : ExchangeResponseGenericBase, new()
+        {
             var response = await this.GetResponse(request);
-            var productsResponse = new GetPaymentMethodsResponse(response);
-            return productsResponse;
+
+            var result = new T();
+            result.HttpResponse = response;
+            result.ProcessJson();
+
+            return result;
         }
     }
 }
