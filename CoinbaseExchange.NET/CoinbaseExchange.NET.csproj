@@ -74,6 +74,10 @@
     <Compile Include="Endpoints\OrderBook\GetProductOrderBookResponse.cs" />
     <Compile Include="Endpoints\OrderBook\RealtimeMessage.cs" />
     <Compile Include="Endpoints\OrderBook\RealtimeOrderBookClient.cs" />
+    <Compile Include="Endpoints\Orders\OrdersBaseRequest.cs" />
+    <Compile Include="Endpoints\Orders\OrdersMarketRequest.cs" />
+    <Compile Include="Endpoints\Orders\OrdersResponse.cs" />
+    <Compile Include="Endpoints\Orders\OrdersClient.cs" />
     <Compile Include="Endpoints\PaymentMethods\GetPaymentMethodsResponse.cs" />
     <Compile Include="Endpoints\PaymentMethods\PaymentMethodsClient.cs" />
     <Compile Include="Endpoints\Products\GetProductsRequest.cs" />
@@ -92,9 +96,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Endpoints\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

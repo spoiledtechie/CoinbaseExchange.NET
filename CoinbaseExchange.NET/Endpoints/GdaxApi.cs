@@ -1,6 +1,7 @@
 ﻿using CoinbaseExchange.NET.Core;
 using CoinbaseExchange.NET.Endpoints.Account;
 using CoinbaseExchange.NET.Endpoints.Deposits;
+using CoinbaseExchange.NET.Endpoints.Orders;
 using CoinbaseExchange.NET.Endpoints.PaymentMethods;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,18 @@ namespace CoinbaseExchange.NET.Endpoints
                     _paymentMethods = new PaymentMethodsClient(_authSettings);
 
                 return _paymentMethods;
+            }
+        }
+
+        private OrdersClient _orders;
+        public OrdersClient Orders
+        {
+            get
+            {
+                if (_orders == null)
+                    _orders = new OrdersClient(_authSettings);
+
+                return _orders;
             }
         }
     }
