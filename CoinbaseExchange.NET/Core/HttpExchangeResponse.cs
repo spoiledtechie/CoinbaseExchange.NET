@@ -25,5 +25,11 @@ namespace CoinbaseExchange.NET.Core
             this.ContentBody = contentBody;
             this.IsSuccessStatusCode = isSuccess;
         }
+
+        public string ErrorMessage()
+        {
+            // TODO: Extract error message from JSON and return that
+            return ContentBody;
+        }
     }
 }
