@@ -84,6 +84,8 @@
     <Compile Include="Endpoints\Products\GetProductsResponse.cs" />
     <Compile Include="Endpoints\Products\Products.cs" />
     <Compile Include="Endpoints\Products\ProductsClient.cs" />
+    <Compile Include="Endpoints\Withdrawals\WithdrawalsClient.cs" />
+    <Compile Include="Endpoints\Withdrawals\WithdrawalResponse.cs" />
     <Compile Include="Errors\ExchangeClientError.cs" />
     <Compile Include="Core\ExchangePageableRequestBase.cs" />
     <Compile Include="Core\ExchangeRequestBase.cs" />
