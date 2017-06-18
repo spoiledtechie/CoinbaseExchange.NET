@@ -3,6 +3,7 @@ using CoinbaseExchange.NET.Endpoints.Account;
 using CoinbaseExchange.NET.Endpoints.Deposits;
 using CoinbaseExchange.NET.Endpoints.Orders;
 using CoinbaseExchange.NET.Endpoints.PaymentMethods;
+using CoinbaseExchange.NET.Endpoints.Withdrawals;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +66,18 @@ namespace CoinbaseExchange.NET.Endpoints
                     _orders = new OrdersClient(_authSettings);
 
                 return _orders;
+            }
+        }
+
+        private WithdrawalsClient _withdrawals;
+        public WithdrawalsClient Withdrawals
+        {
+            get
+            {
+                if (_withdrawals == null)
+                    _withdrawals = new WithdrawalsClient(_authSettings);
+
+                return _withdrawals;
             }
         }
     }
