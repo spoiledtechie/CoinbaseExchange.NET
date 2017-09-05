@@ -14,6 +14,9 @@ namespace CoinbaseExchange.NET.Core
 
         protected ExchangePageableResponseBase(HttpExchangeResponse response)
         {
+            if (!response.IsSuccessStatusCode)
+                throw new Exception("API fail: " + response.ContentBody);
+
             var beforeHeader = response.Headers.LastOrDefault(x => x.Key != null && x.Key.ToUpper() == "CB-BEFORE");
             var afterHeader = response.Headers.LastOrDefault(x => x.Key != null && x.Key.ToUpper() == "CB-AFTER");
 
