@@ -17,9 +17,9 @@ namespace CoinbaseExchange.NET.Endpoints.OrderBook
         {
             this.Type = jToken["type"].Value<string>();
             this.Sequence = jToken["sequence"].Value<long>();
-			var priceToken = jToken["price"];
-			if (priceToken != null) // no "price" token in market orders
-				this.Price = priceToken.Value<decimal>();
+            var priceToken = jToken["price"];
+            if (priceToken != null) // no "price" token in market orders
+                this.Price = priceToken.Value<decimal>();
         }
     }
 
@@ -32,7 +32,8 @@ namespace CoinbaseExchange.NET.Endpoints.OrderBook
         public RealtimeReceived(JToken jToken) : base(jToken)
         {
             this.OrderId = jToken["order_id"].Value<string>();
-            this.Size = jToken["size"].Value<decimal>();
+            if (jToken["size"] != null)
+                this.Size = jToken["size"].Value<decimal>();
             this.Side = jToken["side"].Value<string>();
         }
     }
@@ -63,7 +64,8 @@ namespace CoinbaseExchange.NET.Endpoints.OrderBook
             : base(jToken)
         {
             this.OrderId = jToken["order_id"].Value<string>();
-            this.RemainingSize = jToken["remaining_size"].Value<decimal>();
+            if (jToken["remaining_size"] != null)
+                this.RemainingSize = jToken["remaining_size"].Value<decimal>();
             this.Side = jToken["side"].Value<string>();
             this.Reason = jToken["reason"].Value<string>();
         }
@@ -111,12 +113,12 @@ namespace CoinbaseExchange.NET.Endpoints.OrderBook
 
     public class RealtimeError
     {
-		public string Type { get; set; }
-		public string Message { get; set; }
-		public RealtimeError(JToken jToken)
+        public string Type { get; set; }
+        public string Message { get; set; }
+        public RealtimeError(JToken jToken)
         {
-			this.Type = jToken["type"].Value<string>();
-			this.Message = jToken["message"].Value<string>();
-		}
-	}
+            this.Type = jToken["type"].Value<string>();
+            this.Message = jToken["message"].Value<string>();
+        }
+    }
 }

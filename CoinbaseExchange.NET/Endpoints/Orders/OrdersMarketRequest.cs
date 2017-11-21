@@ -18,5 +18,10 @@ namespace CoinbaseExchange.NET.Endpoints.Orders
         public string Size { get; set; }
         [JsonProperty(PropertyName = "funds")]
         public string Funds { get; set; }
+        [JsonProperty(PropertyName = "price")]
+        public string Price { get; set; }
+
+        [JsonProperty(PropertyName = "time_in_force")]
+        public string TimeInForce { get; set; }
     }
 }

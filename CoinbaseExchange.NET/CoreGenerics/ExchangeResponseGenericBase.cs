@@ -16,8 +16,18 @@ namespace CoinbaseExchange.NET.CoreGenerics
 
         internal virtual void ProcessJson()
         {
+
             if (HttpResponse.IsSuccessStatusCode)
-                JsonConvert.PopulateObject(HttpResponse.ContentBody, this);
+            {
+                try
+                {
+                    JsonConvert.PopulateObject(HttpResponse.ContentBody, this);
+                }
+                catch (Exception exception)
+                {
+               //Log.Error     throw new Exception("Can't Populate:" + HttpResponse.ContentBody, exception);
+                }
+            }
         }
     }
 }

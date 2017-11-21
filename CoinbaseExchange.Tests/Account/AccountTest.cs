@@ -5,6 +5,7 @@ using CoinbaseExchange.NET.Endpoints.Account;
 using CoinbaseExchange.NET;
 using CoinbaseExchange.NET.Core;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace CoinbaseExchange.Tests
 {
@@ -59,9 +60,9 @@ namespace CoinbaseExchange.Tests
         private CBAuthenticationContainer GetAuthenticationContainer()
         {
             var authenticationContainer = new CBAuthenticationContainer(
-                "", // API Key
-                "", // Passphrase
-                ""  // Secret
+              ConfigurationManager.AppSettings["apikey"], // API Key
+              ConfigurationManager.AppSettings["passphrase"], // Passphrase
+             ConfigurationManager.AppSettings["secretkey"]// Secret
             );
 
             return authenticationContainer;

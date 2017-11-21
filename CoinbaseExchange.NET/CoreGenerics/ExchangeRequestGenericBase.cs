@@ -14,6 +14,7 @@ namespace CoinbaseExchange.NET.CoreGenerics
         public ExchangeRequestGenericBase(string method, string url, object requestBody = null)
             : base(method)
         {
+
             RequestUrl = url;
 
             if (requestBody != null)
