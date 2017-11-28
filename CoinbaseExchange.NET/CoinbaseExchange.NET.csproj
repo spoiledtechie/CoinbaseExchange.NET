@@ -74,6 +74,8 @@
     <Compile Include="Endpoints\OrderBook\GetProductOrderBookResponse.cs" />
     <Compile Include="Endpoints\OrderBook\RealtimeMessage.cs" />
     <Compile Include="Endpoints\OrderBook\RealtimeOrderBookClient.cs" />
+    <Compile Include="Endpoints\Orders\OpenOrdersRequest.cs" />
+    <Compile Include="Endpoints\Orders\OpenOrdersResponse.cs" />
     <Compile Include="Endpoints\Orders\OrdersBaseRequest.cs" />
     <Compile Include="Endpoints\Orders\OrdersMarketRequest.cs" />
     <Compile Include="Endpoints\Orders\OrdersResponse.cs" />

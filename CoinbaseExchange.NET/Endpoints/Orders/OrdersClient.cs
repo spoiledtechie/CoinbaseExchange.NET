@@ -12,6 +12,13 @@ namespace CoinbaseExchange.NET.Endpoints.Orders
     {
         public OrdersClient(CBAuthenticationContainer authenticationContainer) : base(authenticationContainer) { }
 
+        public async Task<OpenOrdersResponse> GetOpenOrders()
+        {
+            var request = new OpenOrdersRequest();
+            var response = await this.GetResponse(request);
+            var accountResponse = new OpenOrdersResponse(response);
+            return accountResponse;
+        }
         public async Task<OrdersResponse> PostOrderMarket(OrdersMarketRequest model)
         {
             var req = new ExchangeRequestGenericBase("POST", "/orders", model);

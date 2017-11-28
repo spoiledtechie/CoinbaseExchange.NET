@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CoinbaseExchange.NET.Endpoints.Orders
 {
+    
     public class OrdersResponse : ExchangeResponseGenericBase
     {
         public string Id { get; set; }
