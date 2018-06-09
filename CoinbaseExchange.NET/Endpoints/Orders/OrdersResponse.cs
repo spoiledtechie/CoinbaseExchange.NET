@@ -13,6 +13,17 @@ namespace CoinbaseExchange.NET.Endpoints.Orders
     public class OrdersResponse : ExchangeResponseGenericBase
     {
         public string Id { get; set; }
+        /// <summary>
+        /// price of which we bought this order at.
+        /// </summary>
+        public decimal PurchasePrice { get; set; }
+        /// <summary>
+        /// we need the group id to match the BUY order, with the sell order.
+        /// so I can quickly search for the buy order to see what it was purchased at
+        /// then make a decision of how to adjust the sell if needed.
+        /// </summary>
+        public Guid GroupId { get; set; }
+
         public decimal Price { get; set; }
         public decimal Size { get; set; }
         [JsonProperty(PropertyName = "product_id")]
